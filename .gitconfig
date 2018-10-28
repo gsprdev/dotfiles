@@ -1,0 +1,33 @@
+[user]
+	name = Gary Spreder
+	email = garyspreder@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[diff]
+	tool = kdiff3
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[difftool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\"
+[merge]
+    tool = kdiff3
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[mergetool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[color]
+	ui = auto
+[push]
+	default = simple
+[alias]
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+	servepushable = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths --enable=receive-pack .git/
+[commit]
+	template = ~/.stCommitMsg
