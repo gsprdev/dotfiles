@@ -35,8 +35,11 @@ symlinkFile $DOTFILES_DIR/submodules/antigen/antigen.zsh ~/.zsh/antigen.zsh
 symlinkFile $DOTFILES_DIR/.zshrc ~/.zshrc
 symlinkFile $DOTFILES_DIR/.zshenv ~/.zshenv
 
+# git
+symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
+symlinkFile $DOTFILES_DIR/.gitignore_global ~/.gitignore_global
+
 # Others
 symlinkFile $DOTFILES_DIR/.ssh/known_hosts ~/.ssh/known_hosts
-symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
 symlinkFile $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 
