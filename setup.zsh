@@ -30,7 +30,9 @@ rsync -ah $DOTFILES_DIR/.vim/ ~/.vim/
 symlinkDir $DOTFILES_DIR/submodules/vundle ~/.vim/bundle/Vundle.vim
 symlinkFile $DOTFILES_DIR/.vimrc ~/.vimrc
 
-# zsh
+# sh-family shells
+symlinkFile $DOTFILES_DIR/.aliases ~/.aliases
+symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/submodules/antigen/antigen.zsh ~/.zsh/antigen.zsh
 symlinkFile $DOTFILES_DIR/.zshrc ~/.zshrc
 symlinkFile $DOTFILES_DIR/.zshenv ~/.zshenv
@@ -41,5 +43,5 @@ symlinkFile $DOTFILES_DIR/.gitignore_global ~/.gitignore_global
 
 # Others
 symlinkFile $DOTFILES_DIR/.ssh/known_hosts ~/.ssh/known_hosts
+symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
-

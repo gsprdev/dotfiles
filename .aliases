@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# Data synchronization
+alias syncfromoffice="rsync -aurh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ macwork:~/ ~/"
+alias synctooffice="rsync -aurh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ ~/ macwork:~/"
+alias syncprojectsfromoffice="rsync -auzh --delete --progress --exclude=build/ macwork:~/GradleProjects/ ~/GradleProjects/"
+alias syncprojectstooffice="rsync -auzh --delete --progress --exclude=build/ ~/GradleProjects/ macwork:~/GradleProjects/"
+
+# Enable aliases to be sudo’ed
+#alias sudo='sudo '
+
+# Throw caution to the wind
+alias packageupdate='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup;'
+
+# MacOS, Git, and VIM, etc create temp files which cloud repositories and backup direcotries
+alias cleanupjunkfiles="find . -type f -name '.DS_Store' -or -name '*~' -or -name '*.orig' -or -name '*_BACKUP_*' -or -name '*_BASE_*' -or -name '*_LOCAL_*' -or -name '*_REMOTE_*' -delete"
+
+# Show/hide hidden files in Finder
+alias findershow="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias finderhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# XML formatting
+alias xmlformat='xmllint --format'
+
