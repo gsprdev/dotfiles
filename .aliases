@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 # Data synchronization
-alias syncfromoffice="rsync -aurh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ macwork:~/ ~/"
-alias synctooffice="rsync -aurh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ ~/ macwork:~/"
+alias syncfromoffice="rsync -azurh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ macwork:~/ ~/"
+alias synctooffice="rsync -azurh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ ~/ macwork:~/"
 alias syncprojectsfromoffice="rsync -auzh --delete --progress --exclude=build/ macwork:~/GradleProjects/ ~/GradleProjects/"
 alias syncprojectstooffice="rsync -auzh --delete --progress --exclude=build/ ~/GradleProjects/ macwork:~/GradleProjects/"
 
