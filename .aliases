@@ -13,7 +13,7 @@ alias syncprojectstooffice="rsync -auzh --delete --progress --exclude=build/ ~/G
 alias packageupdate='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup;'
 
 # MacOS, Git, and VIM, etc create temp files which cloud repositories and backup direcotries
-alias cleanupjunkfiles="find . -type f -name '.DS_Store' -or -name '*~' -or -name '*.orig' -or -name '*_BACKUP_*' -or -name '*_BASE_*' -or -name '*_LOCAL_*' -or -name '*_REMOTE_*' -delete"
+alias cleanupjunkfiles="find . -type f \( -name '.DS_Store' -or -name '*~' -or -name '*.orig' -or -name '*_BACKUP_*' -or -name '*_BASE_*' -or -name '*_LOCAL_*' -or -name '*_REMOTE_*' \) -delete"
 
 # Show/hide hidden files in Finder
 alias findershow="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
