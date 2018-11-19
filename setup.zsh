@@ -32,6 +32,7 @@ symlinkFile $DOTFILES_DIR/.vimrc ~/.vimrc
 
 # sh-family shells
 symlinkFile $DOTFILES_DIR/.aliases ~/.aliases
+symlinkFile $DOTFILES_DIR/.functions ~/.functions
 symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/submodules/antigen/antigen.zsh ~/.zsh/antigen.zsh
 symlinkFile $DOTFILES_DIR/.zshrc ~/.zshrc
