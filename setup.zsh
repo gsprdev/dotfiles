@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+set -e
+set -o pipefail
+
 ensureDir () {
     if [ ! -d $1 ]; then
         mkdir -p $1
@@ -43,6 +46,12 @@ symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
 symlinkFile $DOTFILES_DIR/.gitignore_global ~/.gitignore_global
 
 # Others
+if [ -f ~/.ssh/known_hosts ]; then
+    MERGEFILE=/tmp/known_hosts_merged
+    cat ~/.ssh/known_hosts $DOTFILES_DIR/.ssh/known_hosts | sort -u >$MERGEFILE
+    cp ~/.ssh/known_hosts{,.bak}
+    cp $MERGEFILE $DOTFILES_DIR/.ssh/known_hosts
+fi
 symlinkFile $DOTFILES_DIR/.ssh/known_hosts ~/.ssh/known_hosts
 symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
