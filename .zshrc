@@ -5,6 +5,9 @@ SAVEHIST=1000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+export VISUAL=vim
+export EDITOR=vim
+
 source ~/.zsh/antigen.zsh
 
 # Load the oh-my-zsh's library.
