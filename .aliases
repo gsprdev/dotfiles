@@ -24,4 +24,10 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 # XML formatting
 alias xmlformat='xmllint --format'
+alias xmlescape="sed -e 's/&/\&amp;/g' -e 's/\"/\&quot;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'"
+alias xmlunescape="sed -e 's/&amp;/\&/g' -e 's/&quot;/\"/g' -e 's/&gt;/>/g' -e 's/&lt;/</g'"
+
+# Git
+alias gitgraph='git log --graph --oneline --decorate'
+alias gitpullmain='git checkout master && git pull && git checkout develop && git pull'
 
