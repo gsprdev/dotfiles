@@ -18,6 +18,7 @@ antigen bundle gitfast
 antigen bundle git-flow
 #antigen bundle history #vi-mode is probably better
 antigen bundle vi-mode
+antigen bundle gradle
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
