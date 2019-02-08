@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 set -e
-set -o pipefail
 
 ensureDir () {
     if [ ! -d $1 ]; then
