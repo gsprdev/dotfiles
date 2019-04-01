@@ -4,3 +4,8 @@ function tmuxto() {
     ssh -t $1 -- tmux a
 }
 
+function sortinplace() {
+    TMPSWAP=$1.$RANDOM.sorted
+    cat $1 | sort >$TMPSWAP && mv $TMPSWAP $1
+}
+
