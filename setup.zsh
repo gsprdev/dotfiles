@@ -43,6 +43,10 @@ symlinkFile $DOTFILES_DIR/.zshenv ~/.zshenv
 # git
 symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
 symlinkFile $DOTFILES_DIR/.gitignore_global ~/.gitignore_global
+# Create placeholder standard commit message, if not already existing
+if [[ ! -f  ~/.stCommitMsg ]]; then
+    touch ~/.stCommitMsg
+fi
 
 # Others
 if [ -f ~/.ssh/known_hosts ]; then
