@@ -38,3 +38,26 @@ function sortinplace() {
     cat $1 | sort >$TMPSWAP && mv $TMPSWAP $1
 }
 
+function adb-text() {
+    DEVICES=(`adb devices | grep 'device$' | cut -f 1`)
+    DEVICES_DISPLAY=(`adb devices -l | grep ' device '`)
+    if [[ ${#DEVICES} -eq 1 ]]; then
+        DEVICE=$DEVICES[1]
+    else
+        echo "Which device?"
+        IDX=1
+        for DEVICE in $DEVICES; do
+            echo $IDX $DEVICE
+            IDX=$(($IDX+1))
+        done
+        read USER_SELECTION
+        DEVICE=$DEVICES[$USER_SELECTION]
+    fi
+
+    while [[ true ]]; do
+        read INPUT_TEXT
+        INPUT_TEXT=$(echo "'$INPUT_TEXT'" | sed -e 's/\ /%s/g')
+        adb -s $DEVICE shell input text $INPUT_TEXT
+    done
+}
+
