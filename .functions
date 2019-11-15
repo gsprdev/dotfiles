@@ -61,3 +61,51 @@ function adb-text() {
     done
 }
 
+function adb-text() {
+    DEVICES=(`adb devices | grep 'device$' | cut -f 1`)
+    DEVICES_DISPLAY=(`adb devices -l | grep ' device '`)
+    if [[ ${#DEVICES} -eq 1 ]]; then
+        DEVICE=$DEVICES[1]
+    else
+        echo "Which device?"
+        IDX=1
+        for DEVICE in $DEVICES; do
+            echo $IDX $DEVICE
+            IDX=$(($IDX+1))
+        done
+        read USER_SELECTION
+        DEVICE=$DEVICES[$USER_SELECTION]
+    fi
+
+    while [[ true ]]; do
+        read INPUT_TEXT
+        INPUT_TEXT=$(echo "'$INPUT_TEXT'" | sed -e 's/\ /%s/g')
+        adb -s $DEVICE shell input text $INPUT_TEXT
+    done
+}
+
+function cleanupgit() {
+    GITROOTS=(`find $1 -name '.git' -type d | sort`)
+    STARTDIR=`pwd`
+    for gitroot in $GITROOTS; do
+        cd `dirname $gitroot`
+        git gc
+        cd $STARTDIR
+    done
+}
+
+function cleanupgradle() {
+    STARTDIR=`pwd`
+    SEARCHROOT=$1
+    cd "$SEARCHROOT"
+    GRADLEDIRS=(`find $SEARCHROOT -name '.gradle' -type d | sort`)
+    for gradledir in $GRADLEDIRS; do
+        cd `dirname "$gradledir"`
+        echo "\n" `pwd`
+        bash ./gradlew clean 1>/dev/null 2>/dev/null
+        rm -r build/ 2>/dev/null
+        rm -r .gradle/
+        cd "$SEARCHROOT"
+    done
+    cd "$STARTDIR"
+}

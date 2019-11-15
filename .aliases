@@ -31,3 +31,8 @@ alias xmlunescape="sed -e 's/&amp;/\&/g' -e 's/&quot;/\"/g' -e 's/&gt;/>/g' -e '
 alias gitgraph='git log --graph --oneline --decorate'
 alias gitpullmain='git checkout master && git pull && git checkout develop && git pull'
 
+# Informer Data handling
+alias informerdecompress="base64 -D | gzip -d | xmlformat -"
+
+alias dk="docker"
+alias dkc="docker container"
