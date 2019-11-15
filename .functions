@@ -30,7 +30,7 @@ compdef _ssh tabc=ssh
 alias ssh="colorssh"
 
 function tmuxto() {
-    ssh -t $1 -- tmux a
+    ssh -t $@ -- tmux a
 }
 
 function sortinplace() {
