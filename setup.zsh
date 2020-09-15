@@ -42,6 +42,8 @@ symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/submodules/antigen/antigen.zsh ~/.zsh/antigen.zsh
 symlinkFile $DOTFILES_DIR/.zshrc ~/.zshrc
 symlinkFile $DOTFILES_DIR/.zshenv ~/.zshenv
+symlinkFile $DOTFILES_DIR/.exports ~/.exports
+symlinkFile $DOTFILES_DIR/.final ~/.final
 
 # git
 symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
