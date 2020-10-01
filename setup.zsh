@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 set -e
+#setopt verbose
 
 ensureDir () {
     if [ ! -d $1 ]; then
@@ -17,8 +18,10 @@ symlinkFile () {
 
 symlinkDir () {
     if [ -d $1 ]; then
-        ensureDir $(dirname $2)
-        ln -sfv $1 $2
+        if [ ! -d $2 ]; then
+            ensureDir $(dirname $2)
+            ln -sfv $1 $2
+        fi
     fi
 }
 
@@ -58,3 +61,4 @@ fi
 symlinkFile $DOTFILES_DIR/.ssh/known_hosts ~/.ssh/known_hosts
 symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
+
