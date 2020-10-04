@@ -36,3 +36,7 @@ alias informerdecompress="base64 -D | gzip -d | xmlformat -"
 
 alias dk="docker"
 alias dkc="docker container"
+
+# Clipboard sugar, to compansate for MacOS muscle memory
+alias pbcopy="xclip -selection c"
+alias pbpaste="xclip -selection c -o"

@@ -51,6 +51,9 @@ if [[ ! -f  ~/.stCommitMsg ]]; then
     touch ~/.stCommitMsg
 fi
 
+# .config
+symlinkDir $DOTFILES_DIR/.config/kitty ~/.config/kitty
+
 # Others
 if [ -f ~/.ssh/known_hosts ]; then
     MERGEFILE=/tmp/known_hosts_merged
