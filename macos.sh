@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+set -e
+set -o pipefail
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -47,4 +50,9 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew install tmux git-lfs git-flow-avh
+brew cask install kdiff3 kitty macvim adoptopenjdk10 
 
