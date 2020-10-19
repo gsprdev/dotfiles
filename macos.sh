@@ -29,8 +29,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 #
-# Set Desktop as the default location for new Finder windows
-# For other paths, use `PfLo` and `file:///full/path/here/`
+# Set Home as the default location for new Finder windows
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
@@ -53,6 +52,15 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew install tmux git-lfs git-flow-avh
-brew cask install kdiff3 kitty macvim adoptopenjdk10 
+brew install \
+    git-lfs \
+    git-flow-avh \
+    tmux
+brew cask install \
+    adoptopenjdk \
+    kdiff3 \
+    kitty \
+    macvim
+
+./setup.zsh
 

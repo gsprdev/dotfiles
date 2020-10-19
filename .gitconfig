@@ -30,7 +30,7 @@
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	servepushable = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths --enable=receive-pack .git/
     mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
-    mrecho = !echo "sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2'" -
+    set-url = !sh -c 'git remote set-url --push $1 $2 && git remote set-url $1 $2' -
 [commit]
 	template = ~/.stCommitMsg
 [filter "lfs"]
