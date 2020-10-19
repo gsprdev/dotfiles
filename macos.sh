@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
 set -e
-set -o pipefail
+
+source ./common.zsh
 
 # Ask for the administrator password upfront
 sudo -v
@@ -9,10 +10,14 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+
 # Update Mac OS software
 sudo softwareupdate -i -a
+
+set +e
 # Install developer tools
 xcode-select --install
+set -e
 
 # Use ZSH
 sudo chsh -s $(which zsh) $(whoami)
@@ -52,15 +57,20 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew tap adoptopenjdk/openjdk
 brew install \
     git-lfs \
     git-flow-avh \
     tmux
 brew cask install \
     adoptopenjdk \
+    adoptopenjdk10 \
+    adoptopenjdk8 \
     kdiff3 \
     kitty \
     macvim
+
+symlinkDir $DOTFILES_DIR/.config/karabiner ~/.config/karabiner
 
 ./setup.zsh
 

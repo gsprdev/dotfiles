@@ -1,0 +1,79 @@
+{
+  "title": "Right-handed Cut/Copy/Paste",
+  "rules": [
+    {
+      "description": "right_alt+right_shift+comma to Cut",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "comma",
+            "modifiers": {
+              "mandatory": [
+                "right_alt",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "right_alt+right_shift+period to Copy",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "period",
+            "modifiers": {
+              "mandatory": [
+                "right_alt",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },    {
+      "description": "right_alt+right_shift+slash to Paste",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": [
+                "right_alt",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
