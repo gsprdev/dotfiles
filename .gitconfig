@@ -1,6 +1,6 @@
 [user]
 	name = Gary Spreder
-	email = gspreder@interlocsolutions.com
+	email = garypreder@gmail.com
 [core]
 	excludesfile = /Users/gspreder/.gitignore_global
 	autocrlf = input
@@ -14,11 +14,6 @@
     cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\"
 [merge]
     tool = kdiff3
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[mergetool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool "bcomp"]
     trustExitCode = true
     cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
