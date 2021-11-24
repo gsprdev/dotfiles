@@ -1,8 +1,6 @@
 set nocompatible
 filetype off
 
-set guifont=PragmataPro\ Mono\ Liga:h14¬
-
 " Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -97,10 +95,10 @@ endfunction
 :set shiftwidth:4
 
 if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Monospace\ 10
-  elseif has("gui_win32")
+  if has("gui_win32")
     set guifont=Consolas:h10:cANSI
+  else
+    set guifont=PragmataPro\ Mono\ Liga:h10
   endif
 endif
 
