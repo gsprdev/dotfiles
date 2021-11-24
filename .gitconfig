@@ -2,7 +2,6 @@
 	name = Gary Spreder
 	email = garypreder@gmail.com
 [core]
-	excludesfile = /Users/gspreder/.gitignore_global
 	autocrlf = input
 [diff]
 	tool = kdiff3

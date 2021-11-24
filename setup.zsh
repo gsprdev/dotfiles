@@ -27,13 +27,14 @@ symlinkFile $DOTFILES_DIR/.final ~/.final
 
 # git
 symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
-symlinkFile $DOTFILES_DIR/.gitignore_global ~/.gitignore_global
+
 # Create placeholder standard commit message, if not already existing
 if [[ ! -f  ~/.stCommitMsg ]]; then
     touch ~/.stCommitMsg
 fi
 
 # .config
+symlinkDir $DOTFILES_DIR/.config/git ~/.config/git
 symlinkDir $DOTFILES_DIR/.config/kitty ~/.config/kitty
 
 # Others
