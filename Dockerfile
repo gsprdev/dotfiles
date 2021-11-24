@@ -1,8 +1,7 @@
 FROM alpine
 WORKDIR /root
-RUN apk update
-RUN apk add vim git zsh
-COPY .bash_profile .vimrc .zshrc .zshenv .exports ./
+RUN apk add --no-cache vim git zsh
+COPY .bash_profile .vimrc .zshrc .zshenv .exports .gitconfig .gitignore_global ./
 COPY .zshrc_simplified ./.zshrc
 COPY .vim ./.vim/
 COPY .zsh ./.zsh/
