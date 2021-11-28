@@ -11,7 +11,7 @@ function configure() {
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
     # Install required software
-    sudo apt-get -y install vim git zsh tmux xclip kitty
+    sudo apt-get -y install vim git zsh tmux xclip rsync
 
     # Use ZSH
     sudo chsh -s $(which zsh) $(whoami)
