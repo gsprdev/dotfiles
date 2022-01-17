@@ -16,9 +16,6 @@ function configure() {
     # Use ZSH
     sudo chsh -s $(which zsh) $(whoami)
 
-    # Install VIM plugins
-    vim -c ":VundleInstall" -c ":qa"
-
     ./setup.zsh
 }
 

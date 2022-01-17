@@ -48,3 +48,6 @@ symlinkFile $DOTFILES_DIR/.ssh/known_hosts ~/.ssh/known_hosts
 symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
 symlinkFile $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 
+# Install VIM plugins
+vim -c ":VundleInstall" -c ":qa"
+
