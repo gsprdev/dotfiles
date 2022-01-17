@@ -11,7 +11,7 @@ function configure() {
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
     # Install required software
-    sudo yum -y install vim git zsh tmux
+    sudo yum -y install vim git zsh 
 
     # Use ZSH
     sudo chsh -s $(which zsh) $(whoami)
