@@ -1,6 +1,6 @@
 [user]
 	name = Gary Spreder
-	email = garyspreder@gmail.com
+	email = gsprdev@protonmail.com
 [core]
 	autocrlf = input
 [diff]
@@ -16,6 +16,8 @@
 [mergetool "bcomp"]
     trustExitCode = true
     cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [color]
 	ui = auto
 [push]
@@ -45,3 +47,6 @@
 	keepremote = true
 	keeplocal = false
 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -32,6 +32,11 @@ Plugin 'tyru/open-browser.vim'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'wakatime/vim-wakatime'
+Plugin 'miyakogi/slateblue.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'itchyny/lightline.vim'
+Plugin 'vim-scripts/rainbow_parentheses.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,6 +54,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax on
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
 
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$','\~$','\.orig$']
@@ -96,13 +107,14 @@ endfunction
 
 if has("gui_running")
   if has("gui_win32")
-    set guifont=Consolas:h10:cANSI
+    set guifont=Consolas:h14:cANSI
   else
-    set guifont=PragmataPro\ Mono\ Liga:h10
+    set guifont=PragmataPro\ Mono\ Liga:h14
   endif
 endif
 
-colorscheme slate                        
+set termguicolors
+colorscheme slateblue
 
 set sessionoptions+=resize,winpos
 

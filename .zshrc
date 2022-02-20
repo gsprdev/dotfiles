@@ -5,8 +5,13 @@ SAVEHIST=1000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-export VISUAL=vim
-export EDITOR=vim
+if [[ -f $(which nvim) ]]; then
+	export VISUAL=nvim
+	export EDITOR=nvim
+else
+	export VISUAL=vim
+	export EDITOR=vim
+fi
 
 source ~/.zsh/antigen.zsh
 

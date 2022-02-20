@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
 
+# Prefer neovim
+if [[ -f $(which nvim) ]]; then
+   alias vim="nvim"
+fi
+
+
 # Data synchronization
 alias syncfromoffice="rsync -azrh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ macwork:~/ ~/"
 alias synctooffice="rsync -azrh --delete --progress --files-from=/Users/gspreder/rsync_list --exclude=build/ ~/ macwork:~/"
