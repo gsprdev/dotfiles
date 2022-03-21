@@ -1,6 +1,6 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
+set runtimepath^=$XDG_CONFIG_HOME/vim runtimepath+=$XDG_CONFIG_HOME/vim/after
 let &packpath = &runtimepath
-source ~/.vimrc
+source $XDG_CONFIG_HOME/vim/vimrc
 
 if has("gui_vimr")
   set termguicolors

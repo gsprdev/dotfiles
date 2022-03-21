@@ -1,0 +1,1 @@
+/home/gspr/repos/dotfiles/submodules/vundle

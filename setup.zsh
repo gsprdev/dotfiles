@@ -11,22 +11,18 @@ git submodule init
 git submodule update
 
 # vim
-rsync -ah $DOTFILES_DIR/.vim/ ~/.vim/
-symlinkDir $DOTFILES_DIR/submodules/vundle ~/.vim/bundle/Vundle.vim
-symlinkFile $DOTFILES_DIR/.vimrc ~/.vimrc
+symlinkDir $DOTFILES_DIR/submodules/vundle $XDG_CONFIG_HOME/vim/bundle/Vundle.vim
 
 # sh-family shells
 symlinkFile $DOTFILES_DIR/.aliases ~/.aliases
 symlinkFile $DOTFILES_DIR/.functions ~/.functions
-symlinkFile $DOTFILES_DIR/.bash_profile ~/.bash_profile
+symlinkFile $DOTFILES_DIR/.profile ~/.profile
 symlinkFile $DOTFILES_DIR/submodules/antigen/antigen.zsh ~/.zsh/antigen.zsh
 symlinkFile $DOTFILES_DIR/.zshrc ~/.zshrc
 symlinkFile $DOTFILES_DIR/.zshenv ~/.zshenv
+symlinkFile $DOTFILES_DIR/.zprofile ~/.zprofile
 symlinkFile $DOTFILES_DIR/.exports ~/.exports
 symlinkFile $DOTFILES_DIR/.final ~/.final
-
-# git
-symlinkFile $DOTFILES_DIR/.gitconfig ~/.gitconfig
 
 # Create placeholder standard commit message, if not already existing
 if [[ ! -f  ~/.stCommitMsg ]]; then
@@ -34,8 +30,7 @@ if [[ ! -f  ~/.stCommitMsg ]]; then
 fi
 
 # .config
-symlinkDir $DOTFILES_DIR/.config/git ~/.config/git
-symlinkDir $DOTFILES_DIR/.config/kitty ~/.config/kitty
+symlinkDir $DOTFILES_DIR/.config $XDG_CONFIG_HOME
 
 # Others
 if [ -f ~/.ssh/known_hosts ]; then

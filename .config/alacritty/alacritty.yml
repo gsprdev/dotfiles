@@ -22,6 +22,7 @@
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
+  #TERM: xterm-256color
 
 #window:
   # Window dimensions (changes require restart)
@@ -177,6 +178,13 @@ font:
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
+
+  # Use built-in font for box drawing characters.
+  #
+  # If `true`, Alacritty will use a custom built-in font for box drawing
+  # characters (Unicode points 2500 - 259f).
+  #
+  #builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
@@ -845,10 +853,14 @@ key_bindings:
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }
   #- { key: N,              mods: Command,                    action: SpawnNewInstance      }
-  - { key: N,              mods: Command,                    action: CreateNewWindow       }
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+
+  # Supplemental
+  - { key: N,              mods: Shift|Control,              action: CreateNewWindow       }
+  - { key: N,              mods: Command,                    action: CreateNewWindow       }
+
 
 #debug:
   # Display the time it takes to redraw each frame.
@@ -870,3 +882,6 @@ key_bindings:
 
   # Print all received window events.
   #print_events: false
+
+  # Highlight window damage information.
+  #highlight_damage: false

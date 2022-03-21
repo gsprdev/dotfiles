@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 function tmuxto() {
     ssh -t $@ -- tmux a
@@ -79,5 +79,11 @@ function cleanupgradle() {
         cd "$SEARCHROOT"
     done
     cd "$STARTDIR"
+}
+
+function ensuredir() {
+    if [ ! -d $1 ]; then
+        mkdir -p $@
+    fi
 }
 

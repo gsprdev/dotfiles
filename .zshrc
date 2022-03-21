@@ -38,11 +38,6 @@ antigen theme gnzh
 # Tell Antigen that you're done.
 antigen apply
 
-for file in ~/.{path,bash_prompt,exports,aliases,functions,final}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 if [ -d "$HOME/.sdkman" ]; then
 	export SDKMAN_DIR="$HOME/.sdkman"
