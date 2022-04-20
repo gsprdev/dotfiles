@@ -10,9 +10,6 @@ source ./common.zsh
 git submodule init
 git submodule update
 
-# vim
-symlinkDir $DOTFILES_DIR/submodules/vundle $XDG_CONFIG_HOME/vim/bundle/Vundle.vim
-
 # sh-family shells
 symlinkFile $DOTFILES_DIR/.aliases ~/.aliases
 symlinkFile $DOTFILES_DIR/.functions ~/.functions
@@ -31,6 +28,9 @@ fi
 
 # .config
 symlinkDir $DOTFILES_DIR/.config $XDG_CONFIG_HOME
+
+# vim
+symlinkDir $DOTFILES_DIR/submodules/vundle $XDG_CONFIG_HOME/vim/bundle/Vundle.vim
 
 # Others
 if [ -f ~/.ssh/known_hosts ]; then
